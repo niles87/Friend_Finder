@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/07d4bd49a2.js" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <title>Friend-Finder Survey</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>Survey Questions</h2>
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Ashton" required />
+        </div>
+        <div class="form-group">
+          <label for="photo">Link to a Photo Image</label>
+          <input
+            type="text"
+            class="form-control"
+            id="photo"
+            placeholder="https://www...."
+            required
+          />
+        </div>
+        <!-- Question 1 -->
+        <div class="form-group">
+          <label for="Question1">I make friends easily.</label>
+          <select class="form-control" id="Question1">
+            <option selected>Choose one</option>
+            <option value="1">1(strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+          </select>
+        </div>
+        <!-- Question 2 -->
+        <div class="form-group">
+          <label for="Question2">I love large parties.</label>
+          <select class="form-control" id="Question2">
+            <option selected>Choose one</option>
+            <option value="1">1(strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+          </select>
+        </div>
+        <!-- Question 3 -->
+        <div class="form-group">
+          <label for="Question3">I love excitement.</label>
+          <select class="form-control" id="Question3">
+            <option selected>Choose one</option>
+            <option value="1">1(strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+          </select>
+        </div>
+        <!-- Question 4 -->
+        <div class="form-group">
+          <label for="Question4">I prefer a routine to variety.</label>
+          <select class="form-control" id="Question4">
+            <option selected>Choose one</option>
+            <option value="1">1(strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+          </select>
+        </div>
+        <!-- Question 5 -->
+        <div class="form-group">
+          <label for="Question5">I tend to vote for conservative political candidates.</label>
+          <select class="form-control" id="Question5">
+            <option selected>Choose one</option>
+            <option value="1">1(strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+          </select>
+        </div>
+        <!-- Question 6 -->
+        <div class="form-group">
+          <label for="Question6">I am trusting.</label>
+          <select class="form-control" id="Question6">
+            <option selected>Choose one</option>
+            <option value="1">1(strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+          </select>
+        </div>
+        <!-- Question 7 -->
+        <div class="form-group">
+          <label for="Question7">I make people feel welcome.</label>
+          <select class="form-control" id="Question7">
+            <option selected>Choose one</option>
+            <option value="1">1(strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+          </select>
+        </div>
+        <!-- Question 8 -->
+        <div class="form-group">
+          <label for="Question8">I dislike being the center of attention.</label>
+          <select class="form-control" id="Question8">
+            <option selected>Choose one</option>
+            <option value="1">1(strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+          </select>
+        </div>
+        <!-- Question 9 -->
+        <div class="form-group">
+          <label for="Question9">I like to visit new places.</label>
+          <select class="form-control" id="Question9">
+            <option selected>Choose one</option>
+            <option value="1">1(strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+          </select>
+        </div>
+        <!-- Question 10 -->
+        <div class="form-group">
+          <label for="Question10"
+            >I like to talk a lot of different people in social gatherings.</label
+          >
+          <select class="form-control" id="Question10">
+            <option selected>Choose one</option>
+            <option value="1">1(strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+      </form>
+      <footer>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/api/friends">Friend List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#"><i class="fab fa-github"></i> Git Hub Repo</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle">Your Friend Match!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="modalBody"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var inputObj = {};
+      var totalDifference;
+
+      $("#submit-button").on("click", function(event) {
+        event.preventDefault();
+        inputObj.name = $("#name")
+          .val()
+          .trim();
+        inputObj.photo = $("#photo")
+          .val()
+          .trim();
+        inputObj.scores = [
+          parseInt($("#Question1").val()),
+          parseInt($("#Question2").val()),
+          parseInt($("#Question3").val()),
+          parseInt($("#Question4").val()),
+          parseInt($("#Question5").val()),
+          parseInt($("#Question6").val()),
+          parseInt($("#Question7").val()),
+          parseInt($("#Question8").val()),
+          parseInt($("#Question9").val()),
+          parseInt($("#Question10").val()),
+        ];
+        console.log(inputObj);
+        postFriends();
+
+        // Clear input fields
+        $("#name").val("");
+        $("#photo").val("");
+        $("#Question1").val("");
+        $("#Question2").val("");
+        $("#Question3").val("");
+        $("#Question4").val("");
+        $("#Question5").val("");
+        $("#Question6").val("");
+        $("#Question7").val("");
+        $("#Question8").val("");
+        $("#Question9").val("");
+        $("#Question10").val("");
+      });
+
+      function postFriends() {
+        $.post("/api/friends", inputObj, function(msg) {
+          alert("Data Saved: " + JSON.stringify(msg));
+          getFriend();
+        });
+      }
+
+      function getFriend() {
+        $.get("/api/friends", function(data) {
+          console.log(data);
+        });
+      }
+
+      function difference(a, b) {
+        return Math.abs(a - b);
+      }
+    </script>
+  </body>
+</html>
