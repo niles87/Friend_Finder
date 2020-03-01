@@ -167,7 +167,9 @@
             <a class="nav-link active" href="/api/friends">Friend List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#"><i class="fab fa-github"></i> Git Hub Repo</a>
+            <a class="nav-link active" href="https://github.com/niles87/Friend_Finder"
+              ><i class="fab fa-github"></i> GitHub Repo</a
+            >
           </li>
         </ul>
       </footer>
@@ -190,70 +192,104 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" id="modalBody"></div>
+          <div class="modal-body">
+            <div class="text-center">
+              <img id="match-photo" class="img-thumbnail" />
+              <h3 id="match-name"></h3>
+            </div>
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
-    <script>
-      var inputObj = {};
-      var totalDifference;
 
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
       $("#submit-button").on("click", function(event) {
         event.preventDefault();
-        inputObj.name = $("#name")
-          .val()
-          .trim();
-        inputObj.photo = $("#photo")
-          .val()
-          .trim();
-        inputObj.scores = [
-          parseInt($("#Question1").val()),
-          parseInt($("#Question2").val()),
-          parseInt($("#Question3").val()),
-          parseInt($("#Question4").val()),
-          parseInt($("#Question5").val()),
-          parseInt($("#Question6").val()),
-          parseInt($("#Question7").val()),
-          parseInt($("#Question8").val()),
-          parseInt($("#Question9").val()),
-          parseInt($("#Question10").val()),
-        ];
-        console.log(inputObj);
-        postFriends();
 
-        // Clear input fields
-        $("#name").val("");
-        $("#photo").val("");
-        $("#Question1").val("");
-        $("#Question2").val("");
-        $("#Question3").val("");
-        $("#Question4").val("");
-        $("#Question5").val("");
-        $("#Question6").val("");
-        $("#Question7").val("");
-        $("#Question8").val("");
-        $("#Question9").val("");
-        $("#Question10").val("");
+        var validate = true;
+
+        if (
+          ($("#name").val() ||
+            $("#photo").val() ||
+            $("#Question1").val() ||
+            $("#Question2").val() ||
+            $("#Question3").val() ||
+            $("#Question4").val() ||
+            $("#Question5").val() ||
+            $("#Question6").val() ||
+            $("#Question7").val() ||
+            $("#Question8").val() ||
+            $("#Question9").val() ||
+            $("#Question10").val()) === ""
+        ) {
+          validate = false;
+        }
+
+        if (validate) {
+          var userInput = {
+            name: $("#name")
+              .val()
+              .trim(),
+            photo: $("#photo")
+              .val()
+              .trim(),
+            scores: [
+              parseInt($("#Question1").val()),
+              parseInt($("#Question2").val()),
+              parseInt($("#Question3").val()),
+              parseInt($("#Question4").val()),
+              parseInt($("#Question5").val()),
+              parseInt($("#Question6").val()),
+              parseInt($("#Question7").val()),
+              parseInt($("#Question8").val()),
+              parseInt($("#Question9").val()),
+              parseInt($("#Question10").val()),
+            ],
+          };
+          console.log(userInput);
+
+          // Clear input fields
+          $("#name").val("");
+          $("#photo").val("");
+          $("#Question1").val("");
+          $("#Question2").val("");
+          $("#Question3").val("");
+          $("#Question4").val("");
+          $("#Question5").val("");
+          $("#Question6").val("");
+          $("#Question7").val("");
+          $("#Question8").val("");
+          $("#Question9").val("");
+          $("#Question10").val("");
+
+          postFriends(userInput);
+        } else {
+          $("#match-name").text("Finish the survey to see your new friend");
+          $("#modal").modal("toggle");
+        }
       });
-
-      function postFriends() {
-        $.post("/api/friends", inputObj, function(msg) {
-          alert("Data Saved: " + JSON.stringify(msg));
-          getFriend();
+      function postFriends(input) {
+        $.post("/api/friends", input, function(reply) {
+          console.log(reply);
+          showFriend(reply);
         });
-      }
 
-      function getFriend() {
-        $.get("/api/friends", function(data) {
+        function showFriend(data) {
           console.log(data);
-        });
-      }
-
-      function difference(a, b) {
-        return Math.abs(a - b);
+          console.log(data.friendName);
+          console.log(data.friendPhoto);
+          $("#match-photo").attr("src", data.friendPhoto);
+          $("#match-name").text(data.friendName);
+          $("#modal").modal("toggle");
+        }
       }
     </script>
   </body>
