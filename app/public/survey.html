@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script src="https://kit.fontawesome.com/07d4bd49a2.js" crossorigin="anonymous"></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -19,13 +14,15 @@
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron bg-purple">
         <div class="text-center">
-          <h1>
+          <h1 class="text-white">
             <span class="text-info"><i class="fas fa-user-friends"></i></span> Friend-Finder
           </h1>
           <br />
-          <h2>Survey Questions</h2>
+          <h2 class="text-white">
+            <span class="text-yellow"><i class="far fa-file-alt"></i></span> Survey Questions
+          </h2>
         </div>
       </div>
       <form>
@@ -165,20 +162,17 @@
             <option value="5">5(strongly agree)</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+        <button type="submit" class="btn btn-indigo" id="submit-button">Submit</button>
       </form>
+      <hr />
       <footer>
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="/api/friends">Friend List</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="https://github.com/niles87/Friend_Finder"
-              ><i class="fab fa-github"></i> GitHub Repo</a
-            >
-          </li>
-        </ul>
+        <a class="text-indigo" href="/api/friends">Friend List</a>
+        <span>|</span>
+        <a class="text-indigo" href="https://github.com/niles87/Friend_Finder"
+          ><i class="fab fa-github"></i> GitHub Repo</a
+        >
       </footer>
+      <hr />
     </div>
 
     <!-- Modal -->
@@ -217,87 +211,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript">
-      $("#submit-button").on("click", function(event) {
-        event.preventDefault();
-
-        var validate = true;
-
-        if (
-          ($("#name").val() ||
-            $("#photo").val() ||
-            $("#Question1").val() ||
-            $("#Question2").val() ||
-            $("#Question3").val() ||
-            $("#Question4").val() ||
-            $("#Question5").val() ||
-            $("#Question6").val() ||
-            $("#Question7").val() ||
-            $("#Question8").val() ||
-            $("#Question9").val() ||
-            $("#Question10").val()) === ""
-        ) {
-          validate = false;
-        }
-
-        if (validate) {
-          var userInput = {
-            name: $("#name")
-              .val()
-              .trim(),
-            photo: $("#photo")
-              .val()
-              .trim(),
-            scores: [
-              parseInt($("#Question1").val()),
-              parseInt($("#Question2").val()),
-              parseInt($("#Question3").val()),
-              parseInt($("#Question4").val()),
-              parseInt($("#Question5").val()),
-              parseInt($("#Question6").val()),
-              parseInt($("#Question7").val()),
-              parseInt($("#Question8").val()),
-              parseInt($("#Question9").val()),
-              parseInt($("#Question10").val()),
-            ],
-          };
-          console.log(userInput);
-
-          // Clear input fields
-          $("#name").val("");
-          $("#photo").val("");
-          $("#Question1").val("");
-          $("#Question2").val("");
-          $("#Question3").val("");
-          $("#Question4").val("");
-          $("#Question5").val("");
-          $("#Question6").val("");
-          $("#Question7").val("");
-          $("#Question8").val("");
-          $("#Question9").val("");
-          $("#Question10").val("");
-
-          postFriends(userInput);
-        } else {
-          $("#match-name").text("Finish the survey to see your new friend");
-          $("#modal").modal("toggle");
-        }
-      });
-      function postFriends(input) {
-        $.post("/api/friends", input, function(reply) {
-          console.log(reply);
-          showFriend(reply);
-        });
-
-        function showFriend(data) {
-          console.log(data);
-          console.log(data.friendName);
-          console.log(data.friendPhoto);
-          $("#match-photo").attr("src", data.friendPhoto);
-          $("#match-name").text(data.friendName);
-          $("#modal").modal("toggle");
-        }
-      }
-    </script>
+    <script src="assets/javascript/page.js"></script>
   </body>
 </html>
