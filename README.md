@@ -24,6 +24,7 @@ To use locally clone this repo and in your terminal or command line enter `npm i
 1. Node.js
 2. Express.js
 3. Bootstrap
+4. Sass
 
 ### Contributers
 
