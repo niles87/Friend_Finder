@@ -30,4 +30,4 @@ To use locally clone this repo and in your terminal or command line enter `npm i
 
 **Niles Bingham** - Full-Stack Developer
 
-[Heroku Deployed App](https://young-plateau-72829.herokuapp.com/ "Heroku Deployed App")
+[Friend Finder](https://young-plateau-72829.herokuapp.com/ "Heroku Deployed App")
