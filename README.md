@@ -8,7 +8,7 @@
 <p>Survey</p>
 <img src="images/ff_survey.gif">
 
-<p>Friends List</p>
+<p style="color:blue;">Friends List</p>
 <img src="images/ff_survey_friends_json.gif">
 
 ## Overview
