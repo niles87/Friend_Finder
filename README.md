@@ -3,13 +3,13 @@
 ## App Visuals
 
 <p>Home Page</p>
-<img src="images/ff_opening_scene.gif">
+<p align='center'><img src="images/ff_opening_scene.gif"></p>
 
 <p>Survey</p>
-<img src="images/ff_survey.gif">
+<p align='center'><img src="images/ff_survey.gif"></p>
 
 <p style="color:blue;">Friends List</p>
-<img src="images/ff_survey_friends_json.gif">
+<p align='center'><img src="images/ff_survey_friends_json.gif"></p>
 
 ## Overview
 
